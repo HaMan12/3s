@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../Css/3S.css">
+  <link rel="stylesheet" href="../../Css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../Css/swiper.css">
+  <link rel="stylesheet" href="../../Css/aos.css">
+  <link rel="stylesheet" href="../../Css/layout.css">
+  <title>關於廣化</title>
+</head>
+<body>
+<div id="app">
+  <My-header :selected="selected" :languageshow="Showlanguage" :indexs="indexs" @emitProduct="getProduct" @emitLanguage="getoption"
+  @select-option="selectOption" @mb-dropdown="mbDropdown" @mb-dropdownlist="mbDropdownlist"@mb-dropdownlanguages="dropdownLanguage"></My-header>
+  <!-- Toast -->
+  <div class="h-16 bg-bgGray justify-start items-center hidden | md:flex">
+    <ul class="flex ml-10">
+      <li class="center mr-3">
+        <img src="../../img/img/Toast-home.svg">
+      </li>
+      <li class="flex mr-3" v-for="item in toast" :key="item.title">
+        <a href="" class="flex">
+          <img src="../../img/img/Toast-arrow.svg">
+          <p class="pl-2 text-text">{{item.title}}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="fixed top-40 left-20 hidden | xl:block">
+    <ul class="aboutnav">
+      <li><a href="#1" class="scrollTop">公司簡介</a></li>
+      <li><a href="#2" class="scrollTop">基本介紹</a></li>
+      <li><a href="#3" class="scrollTop">重大事件</a></li>
+      <li><a href="#4" class="scrollTop">經營理念</a></li>
+      <li><a href="#5" class="scrollTop">得獎榮耀</a></li>
+      <li><a href="#6" class="scrollTop">聯絡我們</a></li>
+    </ul>
+  </div>
+    <section id="1">
+      <div class="bg-[#F3F3F3] center">
+        <div class="max-w-400 mx-auto text-center center flex-col bg-no-repeat py-24 bg-center company-profile">      
+          <h2 class="aboutTitle pb-5 | md:pb-10">Company Profile</h2>
+          <h6 class="font-semibold pb-3 | md:pb-5 text-2xl | md:text-3xl | lg:text-[40px]">公司簡介</h6>
+          <div class="w-[107px] h-5 bg-[#00B0F0] text-white rounded-sm center text-sm | md:text-base md:h-[48px] md:w-[162px]">
+            <p>股票代碼 : 5297</p>
+          </div>
+          <div class="hidden | md:block md:w-full">
+            <div class="mt-24 h-[75px] border-b-2 border-borderGray relative about-border">
+              <p class="text-bluetext font-semibold text-2xl | md:text-3xl">發展歷史</p>
+            </div>
+            <div class="mt-10 px-2 w-full flex">
+              <div class="w-2/5 center">
+                <img src="../../img/banner/廣化公司bn.jpg" alt="廣化公司bn" width="482">
+              </div>
+              <div class="w-3/5 py-20 px-16">
+                <p class="text-base tracking-widest text-left max-w-[737px] | md:text-lg">廣化科技股份有限公司設立於87年2月4日，以高功率半導體元件(Power Device)封裝設備之研發製造為主，並以自我品牌名稱廣化-3S，來行銷全球。總公 司設於台灣新竹縣，在中國上海設有子公司。主力產品固晶機專用於各類電力電子 (Power Electronics)晶片封裝。截至民國105年12月底，員工共約100人，實收資 本額為235,070仟元。</p>
+              </div>
+            </div>
+          </div>
+          <div class="center pt-10 hidden | md:block">
+            <img src="../../img/img/scroll.svg" alt="往下">
+          </div>
+        </div>
+      </div>
+     <!-- mb版 -->
+      <div class="block bg-[#F3F3F3] | md:hidden">
+        <div class="center">
+          <img src="../../img/banner/廣化公司bn.jpg" alt="廣化公司bn" width="482">
+        </div>
+        <div class="center">
+          <h6 class="text-bluetext font-semibold text-2xl py-6 text-center relative mb-about-border">發展歷史</h6>
+        </div>
+        <div class="mt-5">
+          <p class="px-5 text-center tracking-widest">廣化科技股份有限公司設立於87年2月4日，以高功率半導體元件(Power Device)封裝設備之研發製造為主，並以自我品牌名稱廣化-3S，來行銷全球。總公 司設於台灣新竹縣，在中國上海設有子公司。主力產品固晶機專用於各類電力電子 (Power Electronics)晶片封裝。截至民國105年12月底，員工共約100人，實收資 本額為235,070仟元。</p>
+        </div>
+        <div class="center pt-10 | md:hidden">
+          <img src="../../img/img/scroll.svg" alt="往下" width="36">
+        </div>
+      </div>
+    </section>
+    <main style="background-image: url(../../img/banner/about-bg1.png); background-size: 100% auto;">
+    <!-- 產品 -->
+    <section>
+      <div class="pt-12 bg-no-repeat | md:pt-24">
+        <div class="max-w-[1200px] mx-auto px-5 | lg:px-10">
+          <div class="h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border">
+            <p class="text-bluetext font-semibold text-2xl text-center | md:text-3xl">產品</p>
+          </div>
+          <div>
+            <p class="pt-6 text-base | md:pt-16 md:text-lg" style="letter-spacing: 0.125em;">
+              目前主要產品為銅跳線固晶機(Clip Die Bonder)含固晶機(Die Bonder)、銅跳線 機(Clip Attach)、迴銲爐(Snap reflow oven)及真空迴銲爐(Vacuum reflow oven)等。由 於廣化的銅跳線式固晶機相較於傳統銲線機(Wire bonder)在接觸電阻及封裝尺寸 上擁有更顯著的優勢，已被廣泛使用在高電流(High Power Electronics)器件的封裝 上，在大中華地區Diode市場享有70%以上的市佔率。此外，由於客戶對封裝產品 品質日益嚴苛的要求，低封裝氣泡率(Low void rate)的封裝製程，是進軍高階產品 如車用電子、高規格工業產品的必要條件。廣化公司與客戶合作驗證多年之真空迴 銲爐(Vacuum reflow oven)，已成為封裝業界高可靠度電力電子產品封裝之最佳選 擇，無論是Diode, Power Mosfet, IGBT及IPM均可運用廣化的真空迴銲爐。
+            </p>
+          </div>
+          <div class="mt-24 h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border">
+            <p class="text-bluetext font-semibold text-2xl text-center | md:text-3xl">理念及成果</p>
+          </div>
+          <div>
+            <p class="pt-6 text-base | md:pt-16 md:text-lg" style="letter-spacing: 0.125em;">
+              廣化公司在創立之初即本持著「正、誠、信、實」以及Trust&Commitment的 信念來經營，十年如一日，從未懈怠。在業界普遍認為祇有國際大廠能做好的整廠 固晶機設備(Turnkey Die Attach Process)，廣化公司以專注及鍥而不捨的努力，交出 了紮實的成果。透過不斷的研發、驗證、失敗、修正、及客戶及供應商的協助，股 東的支持，今天在大中華地區，廣化(3S)之固晶機，已建立起屬第一流設備的品牌 形象，並享有頗高的市佔率。就設備的精密度及性能而言，廣化公司的產品已逐漸 縮小與先進國大廠的差距，並以Total solution、客製化、高性能、高性價比、良好 的服務，來取得競爭優勢。
+            </p>
+          </div>
+          <div class="mt-24 h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border">
+            <p class="text-bluetext font-semibold text-2xl text-center | md:text-3xl">未來展望</p>
+          </div>
+          <div class="pb-24">
+            <p class="pt-6 text-base | md:pt-16 md:text-lg" style="letter-spacing: 0.125em;">
+              成為全球第一流的半導體自動化封裝設備領導廠商。
+              打造堅強經營團隊，建立起具備光、機、電、軟體、AOI、精密組立及驗證等 多元能力整合團隊，在工業4.0時代，成為半導體設備智能化的最佳平台及方 案提供者。
+              實踐優良公司治理之規範，讓廣化公司的股東、員工、客戶、供應商及往來金 融機構等所有利害關係人，均可取得長期穩定而合理的利益歸屬。
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-10 max-w-400 mx-auto px-3">
+          <div class="hidden | md:center md:w-1/2">
+            <iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/nmix6mykviQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+          </div>
+          <div class="w-full h-[171px] object-cover md:h-[446px] md:w-1/2 ">
+            <img src="../../img/product/product-7.jpg" alt="產品圖" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 基本介紹 -->
+    <section id="2">
+      <div class="max-w-400 mx-auto text-center center flex-col bg-no-repeat py-16 bg-center company-profile | md:pt-40 md:pb-24">      
+        <h2 class="aboutTitle pb-5 | md:pb-10">Introduction</h2>
+        <h6 class="font-semibold pb-3 | md:pb-5 text-2xl | md:text-3xl | lg:text-[40px]">基本介紹</h6>
+        <div class="md:w-full">
+          <div class="mt-12 h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border | md:mt-24">
+            <p class="text-bluetext font-semibold text-2xl | md:text-3xl">基本資料</p>
+          </div>
+          <div class="block mt-10 w-full md:flex">
+            <div class="w-full | md:w-2/5 center">
+              <img src="../../img/banner/廣化公司bn.jpg" alt="廣化公司bn" width="482">
+            </div>
+            <div class="w-full py-5 px-5 | md:w-3/5 md:py-20 md:px-16">
+              <p class="text-base tracking-widest text-left max-w-[550px] | md:text-lg">
+                成立時間：1998年12月1日 <br>
+                資本額：新台幣2億 3仟 5佰萬元 <br>
+                員工人數：115 人(截至2022/5/30) <br>
+                公司位置：台灣新竹 <br>
+                子公司：上海廣上貿易 <br>
+                全球銷售和服務網絡：中國、日本、馬來西亞、菲律賓、泰國<br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 重大關鍵事件 -->
+    <section id="3">
+      <div class="max-w-400 mx-auto text-center center flex-col bg-no-repeat pb-8 bg-center company-profile">      
+        <h2 class="aboutTitle pb-5 | md:pb-10">Milestones</h2>
+        <h6 class="font-semibold pb-3 | md:pb-5 text-2xl | md:text-3xl | lg:text-[40px]">重大關鍵事件</h6>
+      </div>
+      <div class="swiper yearswiper h-28 max-w-[1358px]">
+        <div class="swiper-wrapper mx-auto">
+            <div class="swiper-slide relative cursor-pointer text-xl center | md:text-3xl" v-for="(item,index) in uniqueYears" :key="index"
+            :class="{'swiper-slide-line': item === selectedData || (selectedData === 2023 && index === 0)}" v-on:click="showContent(index,item)">
+            {{item}}
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="max-w-[1358px] min-h-[772px] mx-auto px-5 mt-10">
+        <div class="py-6 px-3 event-list | md:px-10 | lg:px-16" v-for="(item , index) in filteredYears">
+          <p class="tracking-widest text-base leading-8 | md:text-[25px]">{{item.content}}</p>
+          <div class="flex gap-4 pt-4">
+            <img src="../../img/img/time-icon.svg" alt="time-icon">
+            <p class="text-[#6D6D6D] text-[15px] | md:text-xl">{{item.time}}</p>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <!-- 經營團隊 -->
+    <section class="xl:-mt-24">
+      <div class="max-w-400 mx-auto pb-16">
+        <div class="mt-12 h-[50px] md:h-[75px] md:border-b-2 md:border-borderGray relative about-border | md:mt-24 | 2xl:mx-20">
+          <p class="text-bluetext text-center font-semibold text-2xl | md:text-3xl">經營團隊</p>
+        </div>
+        <div class="mt-12 center overflow-hidden | md:mt-20">
+            <ul class="tree relative droptree">
+              <li class="center flex-col">
+                <div>
+                  <div class="w-[91px] h-[31px] md:w-[131px] md:h-[45px] 
+                            center bg-black text-white rounded-t-xl">
+                   <p>董事長</p>
+                 </div>
+                 <div class="w-[280px] h-[81px] md:w-[403px] md:h-[116px] bg-bgGray center flex-col shadow-md tree-line top-0" style="border-radius: 0 12px 12px 12px;">
+                    <p class="treetext">張維仲</p>
+                    <p class="treep">科技創新與管理 工商管理碩士</p>
+                  </div>
+                </div>
+              </li>
+              <li class="mt-10 center flex-col | md:mt-20">
+                <div>
+                <div class="w-[91px] h-[31px] md:w-[131px] md:h-[45px] 
+                      center bg-bgBlue text-white rounded-t-xl">
+                  <p>總經理</p>
+                </div>
+                <div class="w-[280px] h-[81px] md:w-[403px] md:h-[116px] bg-bgGray center flex-col shadow-md" style="border-radius: 0 12px 12px 12px;">
+                  <p class="treetext">魯碧華</p>
+                  <p class="treep">會計學士</p>
+                </div>
+              </div>
+                  <ul class="flex gap-10 mt-10 | md:mt-24 treeson">
+                    <li>
+                        <div class="w-[91px] h-[32px] md:w-[131px] md:h-[45px] 
+                           center bg-[#64B7B1] text-white rounded-t-xl">
+                         <p>研發處長</p>
+                         </div>
+                        <div class="w-[164px] h-[81px] md:w-[279px] md:h-[116px] bg-bgGray center flex-col shadow-md" style="border-radius: 0 12px 12px 12px;">
+                          <p class="treetext">Eric</p>
+                          <p class="treep">機械工程博士學位</p>
+                         </div>                   
+                    </li>
+                    <li>
+                      <div class="w-[91px] h-[32px] md:w-[131px] md:h-[45px] 
+                         center bg-[#64B7B1] text-white rounded-t-xl">
+                       <p>實驗處長</p>
+                       </div>
+                      <div class="w-[164px] h-[81px] md:w-[279px] md:h-[116px] bg-bgGray center flex-col shadow-md" style="border-radius: 0 12px 12px 12px;">
+                        <p class="treetext">Ruru</p>
+                        <p class="treep">化學博士學位</p>
+                    </div>  
+                    </li>
+                    <li>
+                      <div class="w-[91px] h-[32px] md:w-[131px] md:h-[45px] 
+                         center bg-[#64B7B1] text-white rounded-t-xl">
+                       <p>軟體處長</p>
+                       </div>
+                      <div class="w-[164px] h-[81px] md:w-[279px] md:h-[116px] bg-bgGray center flex-col shadow-md" style="border-radius: 0 12px 12px 12px;">
+                        <p class="treetext">Ching En</p>
+                        <p class="treep">電機控制算法博士學位</p>
+                    </div>                       
+                    </li>
+                    <li>
+                      <div class="w-[120px] h-[32px] md:w-[131px] md:h-[45px] 
+                         center bg-[#64B7B1] text-white rounded-t-xl">
+                       <p>業務與行銷處長</p>
+                       </div>
+                      <div class="w-[164px] h-[81px] md:w-[279px] md:h-[116px] bg-bgGray center flex-col shadow-md" style="border-radius: 0 12px 12px 12px;">
+                        <p class="treetext">Eason</p>
+                        <p class="treep">系統工程學士學位</p>
+                    </div>                        
+                    </li>
+                    <li>
+                      <div class="w-[120px] h-[32px] md:w-[131px] md:h-[45px] 
+                         center bg-[#64B7B1] text-white rounded-t-xl">
+                       <p>機構研發處長</p>
+                       </div>
+                      <div class="w-[164px] h-[81px] md:w-[279px] md:h-[116px] bg-bgGray center flex-col shadow-md" style="border-radius: 0 12px 12px 12px;">
+                        <p class="treetext ">Martin</p>
+                        <p class="treep">機械工程碩士學位</p>
+                    </div>                        
+                    </li>
+                  </ul>
+              </li>
+              <li>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </section>       
+    <!-- 經營理念 -->
+    <section id="4">
+      <div class="max-w-400 mx-auto text-center center flex-col py-16  company-profile">      
+        <h2 class="aboutTitle pb-5 | md:pb-10">Idea</h2>
+        <h6 class="font-semibold pb-3 | md:pb-5 text-2xl | md:text-3xl | lg:text-[40px]">經營理念</h6>
+        <div class="w-2/3 mt-12 h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border">
+          <p class="text-bluetext text-center font-semibold text-2xl | md:text-3xl">公司願景</p>
+        </div>
+        <div class="my-10 px-10 tracking-wider | md:my-20 md:text-lg">
+          <p>成為全球功率半導體封裝製程最佳設備及方案提供者</p>
+        </div>
+        <div class="w-2/3  h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border">
+          <p class="text-bluetext text-center font-semibold text-2xl | md:text-3xl">經營理念</p>
+        </div>
+        <div class="my-10 px-10 tracking-wider | md:my-20 md:text-[25px] ">
+          <p>正誠信實</p>
+        </div>
+        <div class="w-2/3  h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border">
+          <p class="text-bluetext text-center font-semibold text-2xl | md:text-3xl">公司使命</p>
+        </div>
+        <div class="my-10 px-10 tracking-wider | md:my-20 md:text-lg ">
+          <p>成為客戶及供應商信賴的好夥伴，員工實現理想造夢 踏實的好園地，股東放心投資的好公司</p>
+        </div>
+        <div class="w-full md:w-2/3 h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border">
+          <p class="text-bluetext text-center font-semibold text-2xl | md:text-3xl">中長期營運發展策略方向</p>
+        </div>
+        <div class="my-5 px-10 tracking-wider | md:my-20 md:text-lg ">
+          <ul class="Idealist">
+            <li>
+              <span>1.</span>
+              <p>在高功率器件及模組之迴焊設備和真空爐及甲酸迴焊爐，以精實及差異化之策略，做到全世界第一名之技術領導者地位。</p>
+            </li>
+            <li>
+              <span>2.</span>
+              <p>以真空爐及甲酸爐兩種優勢產品帶路與全球功率器件及車用電子大廠結盟，打入主流產品及供應鏈。</p>
+            </li>
+            <li>
+              <span>3.</span>
+              <p>藉與大廠之結盟，深植技術力、品質力、管理力及服務力。</p>
+            </li>
+            <li>
+              <span>4.</span>
+              <p>充核心能力至封裝主力設備如:固晶機、銅跳線機。提供客戶更完整之整廠設備及服務。</p>
+            </li>
+            <li>
+              <span>5.</span>
+              <p>建立全球品牌知名度，延伸設備及服務至更廣泛客戶群，同時在客戶群聚眾多處設立服務據點，強化在地之即時服務。</p>
+            </li>
+            <li>
+              <span>6.</span>
+              <p>培育人才建立精實及高效能團隊，讓人才可在廣化長期發展一起成就大業。</p>
+            </li>
+            <li>
+              <span>7.</span>
+              <p>掌握汽車電子崛起之新商機，隨業績之擴大及良好展望，適時強化人力資源、財務資源、及善用政府和產業提供的各種資源，不斷與時俱進，來累積儲備成長所需的資源及能量。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>  
+   <!-- 得獎榮耀 -->
+    <section id="5" class="pb-10">
+      <div class="text-center md:mt-20">
+        <h2 class="aboutTitle pb-5 | md:pb-10">Award</h2>
+        <h6 class="font-semibold pb-3 | md:pb-5 text-2xl | md:text-3xl | lg:text-[40px]">得獎榮耀</h6>
+      </div>
+      <div class="max-w-400 ml-auto mt-5">
+        <div class="scroll-container flex">
+          <div class="scroll-content">
+            <div v-for="i in 10" class="Award-box flex flex-col bg-[#F5F5F5] w-[328px] h-[536px] md:w-[388px] md:h-[589px]">
+              <p class="px-10 pt-16 pb-5 font-bold text-xl md:text-4xl lg:text-[45px]">2023</p>
+              <p class="px-10 pb-10 md:text-xl">入選2023彭博性別平等指數</p>
+              <div class="ml-10">
+                <div class="object-cover center w-[227px] h-[322px]">
+                  <img src="../../img/img/獎狀.JPG" alt="獎狀">
+                </div>
+              </div>
+              <div class="rounded-full w-4 h-4 bg-[#E2E2E2] absolute bottom-5 right-5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-bar mx-auto">
+          <div class="scroll-thumb">
+            <img src="../../img/img/right-icon.svg" class="scroll-thumb-img">
+            <img src="../../img/img/right-icon.svg" class="scroll-thumb-img1">
+          </div>
+        </div>
+      </div>
+    </section>  
+   <!-- 聯絡我們 -->
+   <section id="6">
+    <div class="max-w-400 mx-auto text-center center flex-col py-16  company-profile">      
+      <h2 class="aboutTitle pb-5 | md:pb-10">Contact Us</h2>
+      <h6 class="font-semibold pb-3 | md:pb-5 text-2xl | md:text-3xl | lg:text-[40px]">聯絡我們</h6>
+      <div class="w-2/3 mt-12 h-[50px] md:h-[75px] md:border-b-2 border-borderGray relative about-border">
+        <p class="text-bluetext text-center font-semibold text-2xl | md:text-3xl">公司資訊</p>
+      </div>
+      <div class="mt-10 px-3 md:flex gap-10 | md:mt-20">
+        <div class="w-full | md:w-1/2">
+          <div class="shadow-xl border border-[#BEBEBE] flex flex-col w-[347px] h-[492px] px-8 py-5 mb-10 lg:w-[500px] lg:h-[600] | xl:w-[627px] xl:h-[763px] xl:px-5 xl:py-28 lg:mb-0">
+            <div class="center">
+              <img src="../../img/img/pc-logo.svg" width="211" class="inline-block py-7 md:py-10 | lg:py-14 xl:w-[418px]">
+            </div>
+            <p class="md:text-[25px] text-[#002060] pb-5 md:pb-10">廣化科技股份有限公司</p>
+            <ul class="text-[#002060] tracking-widest text-left md:pl-10 about-count">
+              <li>地址:新竹縣新豐鄉康樂路一段169-2號2樓 </li>
+              <li>電話：886-3-5577668</li>
+              <li>傳真： 886-3-5577658</li>
+              <li>E-mail： sales@sss-tech.com.tw</li>
+              <li>聯絡人：魯碧華小姐 886-932374512 / 劉志祥886-912345910</li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-full | md:w-1/2">
+          <div class="shadow-xl border border-[#BEBEBE] flex flex-col w-[347px] h-[492px] px-8 py-5 lg:w-[500px] lg:h-[600] | xl:w-[627px] xl:h-[763px] xl:px-10 xl:py-20">
+            <div class="center">
+              <img src="../../img/img/about-housebg.svg" class="inline-block py-7 w-[80px] md:py-8 | lg:py-11 xl:w-[171px]">
+            </div>
+            <p class="md:text-[25px] text-[#002060] pb-5 md:pb-10">上海廣上貿易有限公司</p>
+            <ul class="text-[#002060] tracking-widest text-left md:pl-10 about-count">
+              <li>地址：上海市閔行區莘庄鎮莘松路225 弄26 號603 室 </li>
+              <li>電話：+86-21-64923125</li>
+              <li>傳真：+86-21-54942799 </li>
+              <li>手機：+86-182-1751-8226</li>
+              <li>聯絡人： 黃文鼎先生 886-976295256/江奕安 886-926746276</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+   </section>
+   <!-- 聯絡我們表單 -->
+   <My-contact></My-contact>
+  </main>
+  <My-footer @emitProduct="getProduct"></My-footer>
+</div>
+  <script src="../../Js/package/jquery-3.6.0.min.js"></script>
+  <script src="../../Js/package/swiper-bundle.min.js"></script>
+  <script src="../../Js/package/aos.js"></script>
+  <script src="../../Js/package/jquery.dragscroll.js"></script>
+  <script src="../../Js/package/custom.js"></script>
+  <script type="module" src="../../Js/Home/About.js"></script>
+</body>
+</html>

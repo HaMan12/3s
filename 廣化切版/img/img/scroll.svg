@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="82.543" viewBox="0 0 64 82.543">
+  <g id="scroll" transform="translate(-876 -907.129)">
+    <g id="椭圆_2" data-name="椭圆 2" transform="translate(876 925.672)" fill="none" stroke="#002060" stroke-width="1" stroke-dasharray="5">
+      <circle cx="32" cy="32" r="32" stroke="none"/>
+      <circle cx="32" cy="32" r="31.5" fill="none"/>
+    </g>
+    <g id="arrow-right" transform="translate(920.898 907.129) rotate(90)">
+      <path id="路径_792" data-name="路径 792" d="M.555.553a1.882,1.882,0,0,1,2.666,0L14.515,11.848a1.882,1.882,0,0,1,0,2.666L3.22,25.809A1.885,1.885,0,1,1,.555,23.143l9.965-9.963L.553,3.217a1.883,1.883,0,0,1,0-2.666Z" transform="translate(47.606 0)" fill="#002060" fill-rule="evenodd"/>
+      <path id="路径_793" data-name="路径 793" d="M0,1.882C0,.843,1.183,0,2.643,0h55.5c1.46,0,2.643.843,2.643,1.882S59.6,3.765,58.145,3.765H2.643C1.183,3.765,0,2.922,0,1.882Z" transform="translate(0 11.298)" fill="#002060" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
