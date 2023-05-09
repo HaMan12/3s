@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .center{
+    @apply flex justify-center items-center 
+  }
+  .aboutTitle{
+    @apply font-semibold text-2xl md:text-3xl lg:text-5xl xl:text-7xl 2xl:text-[79px]
+  }
+  .treetext{
+    @apply text-base  md:text-[25px] font-bold text-[#002060]
+  }
+  .treep{
+    @apply text-sm md:text-lg text-[#002060] pt-3
+  }
+}

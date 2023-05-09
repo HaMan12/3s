@@ -1,0 +1,205 @@
+.mountainBox .mountainItem .perform-items .perform-item:hover, 
+.mountainBox .mountainItem .perform-items .perform-item.active 
+{ top: 6% !important; 
+  transform: translateY(0%); 
+}
+.mountainBox .mountainItem .perform-items .perform-item:hover .description, .mountainBox .mountainItem .perform-items .perform-item.active .description { opacity: 1; }
+.mountainItem{
+  width: 33%;
+  height: 540px;
+  position: relative;
+  transition: width .6s;
+}
+.perform-items{
+  position: relative;
+  height: 100%;
+}
+.perform-items .perform-item{
+  position: absolute;
+  border-left: 1px solid #ced4da;
+  transition: all .6s;
+  bottom: 0;
+  top:10%;
+  left: 40%;
+}
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item { border-left-color: rgba(157, 41, 244, 0.3); }
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item:nth-child(1) { left: 20%; top: 25%; }
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item:nth-child(2) { left: 30%; top: 45%; }
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item:nth-child(3) { left: 50%; top: 50%; }
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item:nth-child(4) { left: 60%; top: 31%; }
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item:nth-child(5) { left: 85%; top: 45%; }
+.perform-item::before{
+  content:'';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -3rem;
+  left: -3rem;
+  top: -1.5rem;
+}
+.perform-item .dot{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.perform-item .dot::before{
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #868e96;
+  border-radius: 100%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  transform: scale(0.2);
+}
+.perform-item .dot::after{
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border:1px solid #868e96;
+  border-radius: 100%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  transform: scale(0.5);
+}
+.perform-item .value{
+  font-size: 1.75rem;
+  line-height: 1;
+  position: absolute;
+  top: 0.2rem;
+  right: 100%;
+  margin-right: 1.4rem;
+  text-align: right;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.perform-item .value .sub{
+  font-size: 0.75rem;
+}
+.perform-item .description{
+  color: #868e96;
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  width: 200px;
+  font-size: 0.875rem;
+  top: 0.2rem;
+  left: 0;
+  margin-left: 0.4rem;
+  pointer-events: none;
+  transition:all .3s;
+}
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item .dot:before { background-color: #9d29f4; }
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item .dot:after { border-color: #9d29f4; }
+.mountainBox .mountainItem:nth-child(1) .perform-items .perform-item .value { color: #9d29f4; }
+.mountainBox .mountainItem:nth-child(1) .mountainBg { background-image: url(../img/banner/oneLine_purple.png); }
+.mountainItem .mountainBg{
+  content: ""; 
+  display: block; 
+  position: absolute; 
+  bottom: 0; 
+  right: -40%; 
+  left: -40%; 
+  top: 0; 
+  pointer-events: none; 
+  background-size: 100% auto; 
+  background-repeat: no-repeat; 
+  background-position: bottom center;
+}
+.mountainBox .mountainItem:nth-child(1) .mountainBg .category { background-color: #9d29f4; }
+.mountainItem .mountainBg .category{
+  text-align: center;
+  color: #fff;
+  font-size: 0.875rem;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  padding: 0.25rem 1rem;
+  max-width: 100px;
+  border-radius: 100px;
+}
+.mountainBox .mountainItem .perform-items .perform-item:nth-child(1) { animation: ani-mountainItem 10s 1s ease-in-out infinite; }
+.mountainBox .mountainItem .perform-items .perform-item:nth-child(3) { animation: ani-mountainItem 10s 2.2s ease-in-out infinite; }
+@keyframes ani-mountainItem { 0% { transform: translateY(0%); }
+  50% { transform: translateY(-20%); }
+  100% { transform: translateY(0%); } }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item { border-left-color: rgba(49, 184, 225, 0.3); }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item:nth-child(1) { left: 10%; top: 25%; }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item:nth-child(2) { left: 30%; top: 45%; }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item:nth-child(3) { left: 50%; top: 50%; }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item:nth-child(4) { left: 60%; top: 25%; }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item:nth-child(5) { left: 80%; top: 45%; }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item .dot:before { background-color: #31b8e1; }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item .dot:after { border-color: #31b8e1; }
+.mountainBox .mountainItem:nth-child(2) .perform-items .perform-item .value { color: #31b8e1; }
+.mountainBox .mountainItem:nth-child(2) .mountainBg { background-image: url(../img/banner/oneLine_blue.png); }
+.mountainBox .mountainItem:nth-child(2) .mountainBg .category { background-color: #31b8e1; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item { border-left-color: rgba(94, 147, 121, 0.3); }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item:nth-child(1) { left: 5%; top: 25%; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item:nth-child(2) { left: 18%; top: 45%; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item:nth-child(3) { left: 30%; top: 50%; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item:nth-child(4) { left: 45%; top: 25%; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item:nth-child(5) { left: 65%; top: 45%; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item:nth-child(5) .description { width: 150px; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item .dot:before { background-color: #5e9379; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item .dot:after { border-color: #5e9379; }
+
+.mountainBox .mountainItem:nth-child(3) .perform-items .perform-item .value { color: #5e9379; }
+
+.mountainBox .mountainItem:nth-child(3) .mountainBg .category { background-color: #5e9379; }
+
+.mountainBox .mountainItem:nth-child(3) .mountainBg { background-image: url(../img/banner/oneLine_green.png); }
+
+.mountainBox .mountainItem:nth-child(3) .mountainBg .category .mountainItem:nth-child(3) .mountainBg:after { content: ""; display: block; position: absolute; bottom: 0; left: 60%; background-image: url(../img/banner/oneLine_green.png); height: 200px; background-position: left bottom; background-size: 100% auto; background-repeat: no-repeat; width: 80%; }
+
+.swiper-pagination-bullet{
+  width: 17px;
+  height: 17px;
+  background-color: transparent;
+  margin:10px 0 !important;
+  border: 2px solid #fff;
+}
+.swiper-pagination-bullet-active{
+  background-color: #fff;
+}
+.index-pagination{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 15px !important;
+  bottom: 50% !important;
+}
+@media (max-width:768px) {
+  .banner-Swiper{
+    height: 40vh;
+  }
+  .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+  }
+  .swiper-slide img {
+    object-fit: contain;
+    height: auto;
+  }
+  .swiper-slide{
+    align-items: start;
+  }
+  .banner-video{
+    min-width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}

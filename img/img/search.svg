@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34.698" height="34.698" viewBox="0 0 34.698 34.698">
+  <defs>
+    <filter id="联合_1" x="0" y="0" width="34.698" height="34.698" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="search" transform="translate(2 2)">
+    <g transform="matrix(1, 0, 0, 1, -2, -2)" filter="url(#联合_1)">
+      <path id="联合_1-2" data-name="联合 1" d="M-10563.016-12.827l-6.9-6.907a1.718,1.718,0,0,1-.177-.206,11.614,11.614,0,0,1-6.9,2.257,11.657,11.657,0,0,1-11.657-11.658A11.659,11.659,0,0,1-10576.994-41a11.662,11.662,0,0,1,11.661,11.661,11.6,11.6,0,0,1-2.257,6.893,1.836,1.836,0,0,1,.205.175l6.9,6.907a1.791,1.791,0,0,1,0,2.535,1.793,1.793,0,0,1-1.271.526A1.79,1.79,0,0,1-10563.016-12.827Zm-23.843-16.513a9.865,9.865,0,0,0,9.864,9.864,9.867,9.867,0,0,0,9.867-9.864,9.867,9.867,0,0,0-9.867-9.867A9.865,9.865,0,0,0-10586.858-29.34Z" transform="translate(10590.65 43)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
